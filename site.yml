@@ -89,11 +89,9 @@
         mode: '0440'
         validate: /usr/sbin/visudo -cf %s
         content: |
-          Cmnd_Alias SERVICE_CMDS = /usr/bin/systemctl status ssh, \
-          /usr/bin/systemctl restart ssh
-          Cmnd_Alias PKG_CMDS = /usr/bin/apt update
-          %developers ALL=(ALL) NOPASSWD: SERVICE_CMDS, PKG_CMDS
-
+          Cmnd_Alias GREETING_CMDS = /usr/bin/systemctl status greeting.service, \
+          /usr/bin/systemctl restart greeting.service
+          %developers ALL=(ALL) NOPASSWD: GREETING_CMDS
   handlers:
     - name: Restart SSH
       service:
