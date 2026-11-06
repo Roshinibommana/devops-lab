@@ -4,7 +4,7 @@
   hosts: tradelive
   become: yes
 
-  tasks:
+ tasks:
     - name: Install Flask and Gunicorn
       apt:
         name:
